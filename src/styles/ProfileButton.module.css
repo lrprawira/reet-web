@@ -1,0 +1,11 @@
+.profileButtonWrapper {
+  padding: 10px;
+  background-color: black;
+  border-radius: 28px;
+  min-width: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*# sourceMappingURL=ProfileButton.module.css.map */

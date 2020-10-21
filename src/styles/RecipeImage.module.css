@@ -1,0 +1,39 @@
+.dividedBig {
+  display: flex;
+}
+
+.imageBig {
+  height: 400px;
+  overflow: hidden;
+  border-radius: 36px;
+  flex: 4;
+}
+.imageBig img {
+  width: 100%;
+}
+
+.infoBig {
+  margin-left: 1.4rem;
+  flex: 1;
+}
+.infoBig .infoBox {
+  padding: 1rem;
+  border-radius: 24px;
+  border: 3px solid #aaa;
+}
+.infoBig .infoBox .infoBigTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.infoBig .infoBox .infoBigLists {
+  font-size: 0.9rem;
+  font-weight: normal;
+  list-style: none;
+  padding-left: 0.4rem;
+}
+.infoBig .infoBox .infoBigLists > li {
+  margin-bottom: 1rem;
+}
+
+/*# sourceMappingURL=RecipeImage.module.css.map */

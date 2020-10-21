@@ -1,0 +1,9 @@
+.menuWrapper {
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+  justify-content: center;
+  align-self: center;
+}
+
+/*# sourceMappingURL=MenuHeader.module.css.map */

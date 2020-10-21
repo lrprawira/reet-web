@@ -1,0 +1,8 @@
+.catalogueContentWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1.6rem;
+  grid-row-gap: 1.8rem;
+}
+
+/*# sourceMappingURL=CatalogueContent.module.css.map */
