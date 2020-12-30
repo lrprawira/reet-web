@@ -5,15 +5,15 @@ const Big = props => {
     return (
         <div className={styles.dividedBig}>
             <div className={styles.imageBig}>
-                <img src={props.selectedProduct.images[0]}/>
+                <img src={props.selectedProduct.image} alt={`${props.selectedProduct.name}`}/>
             </div>
             <div className={styles.infoBig}>
                 <div className={styles.infoBox}>
                     <div className={styles.infoBigTitle}>Before You Cook</div>
                     <ul className={styles.infoBigLists}>
-                        <li>Prep. Time: {props.selectedProduct.time.prep} mins</li>
-                        <li>Cook Time: {props.selectedProduct.time.cook} mins</li>
-                        <li>Servings: {props.selectedProduct.time.cook} servings</li>
+                        <li>Prep. Time: {props.selectedProduct.preptime} mins</li>
+                        <li>Cook Time: {props.selectedProduct.cooktime} mins</li>
+                        <li>Servings: {props.selectedProduct.servings} servings</li>
                     </ul>
                 </div>
             </div>

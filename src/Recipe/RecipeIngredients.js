@@ -5,7 +5,11 @@ const RecipeIngredients = props => {
     return (
         <div>
             <div className={styles.ingredientTitle}>Ingredients</div>
-            <div className={styles.ingredientContent}>{ props.ingredients }</div>
+            {
+                props.ingredients.split('\n').map((line, i) => <div className={styles.ingredientContent} key={i}>
+                    <span style={{ paddingRight: 24}}>{ i+1 }.</span>{ line }
+                </div> )
+            }
         </div>
     );
 };

@@ -1,26 +1,14 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import styles from '../../styles/CatalogueContentCard.module.css';
 import {RiStarFill} from 'react-icons/ri';
 import SeparatorHorizontal from "../../SeparatorHorizontal";
-import pancake from "../../assets/images/recipe/pancake.jpg";
 
 const CatalogueContentCard = props => {
     return (
-        <div className={styles.catalogueContentCardWrapper} style={{cursor: "pointer"}} onClick={() => {
-            props.setNavi(2);
-            props.setProduct({
-                name: props.name,
-                author: props.author,
-                ingredients: props.ingredients,
-                instructions: props.instructions,
-                images: props.images,
-                rating: props.rating,
-                time: props.time,
-                servings: props.servings
-            });
-        }}>
+        <Link to={`/recipe/${props.id}`} className={styles.catalogueContentCardWrapper} style={{cursor: "pointer"}} >
             <div className={styles.catalogueContentCardImgWrapper}>
-                <img src={props.images[0]} />
+                <img src={props.image} alt={`${props.name}`} />
             </div>
             <div className={styles.catalogueContentCardTitle}>
                 {props.name}
@@ -36,7 +24,7 @@ const CatalogueContentCard = props => {
                 </div>
             </div>
 
-        </div>
+        </Link>
     );
 };
 

@@ -6,7 +6,7 @@ import ThreePackages from "./Premium/ThreePackages";
 const Premium = (props) => {
     return (
         <div>
-            <Header appNavi={props.appNavi} setNavi={props.setNavi} />
+            <Header />
             <SeparatorVertical height={48} />
             <ThreePackages />
         </div>

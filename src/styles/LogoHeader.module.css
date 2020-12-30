@@ -1,7 +1,20 @@
+.logoWrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: -4px;
+}
+
 .logoText {
   font-size: 24px;
   font-weight: 600;
   align-self: center;
+  margin-top: -4px;
+  margin-left: 16px;
+}
+
+.logoImage {
+  height: 36px;
+  width: auto;
 }
 
 /*# sourceMappingURL=LogoHeader.module.css.map */

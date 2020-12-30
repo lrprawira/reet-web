@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from '../styles/Header.module.css';
 import ProfileButton from "./ProfileButton";
 import WorldLangButton from "./WorldLangButton";
@@ -7,13 +7,18 @@ import Logo from "./Logo";
 import Menu from "./Menu";
 
 const Header = (props) => {
+    const [currentPath, setCurrentPath] = useState();
+    useEffect(() => {
+        setCurrentPath(prev => window.location.pathname);
+    }, []);
+
     return (
         <div className={styles.headerWrapper}>
             <div className={styles.headerLeftLayout}>
-                <Logo onClick={() => props.setNavi(0)} />
+                <Logo />
                 <SeparatorEmpty width={56} />
                 {
-                    props.appNavi !== 1 ? <Menu appNavi={props.appNavi} setNavi={props.setNavi} /> : <></>
+                    currentPath !== '/packages' && <Menu />
                 }
             </div>
             <div className={styles.headerRightLayout}>

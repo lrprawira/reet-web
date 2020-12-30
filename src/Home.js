@@ -7,9 +7,9 @@ import SeparatorVertical from "./SeparatorVertical";
 const Home = (props) => {
     return (
         <div>
-            <Header appNavi={props.appNavi} setNavi={props.setNavi} />
+            <Header />
             <CarouselHome />
-            <Catalogue appNavi={props.appNavi} setNavi={props.setNavi} selectedProduct={props.selectedProduct} setProduct={props.setProduct} />
+            <Catalogue />
             <SeparatorVertical height={72} />
         </div>
     );

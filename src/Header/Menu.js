@@ -2,15 +2,22 @@ import React from "react";
 import { RiSearchLine } from 'react-icons/ri';
 import styles from '../styles/MenuHeader.module.css';
 import SeparatorEmpty from "./SeparatorEmpty";
+import { Link } from 'react-router-dom';
 
 const Menu = (props) => {
     return (
         <div className={styles.menuWrapper}>
-            <div style={props.appNavi === 0 ? {cursor: 'pointer', fontWeight: 600} : {cursor: 'pointer'}} onClick={() => props.setNavi(0)}>Recipes</div>
+            <Link to={'/'}>
+                <div>Recipes</div>
+            </Link>
             <SeparatorEmpty width={32} />
-            <div style={{cursor: 'pointer'}} onClick={() => props.setNavi(1)}>Reet Premium</div>
+            <Link to={'/packages'}>
+                <div>Reet Premium</div>
+            </Link>
             <SeparatorEmpty width={28} />
-            <RiSearchLine color={'black'} size={24} style={{cursor: 'pointer'}} />
+            <Link to={'/#searchbox'}>
+                <RiSearchLine color={'black'} size={24} style={{cursor: 'pointer'}} />
+            </Link>
         </div>
     );
 };

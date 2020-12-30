@@ -1,39 +1,29 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import { useSelector } from "react-redux";
 import PackageCard from "./PackageCard";
 import styles from '../styles/ThreePackages.module.css';
-
-const packages = [
-    {
-        title: 'Basic Premium',
-        benefit: [
-            'Premium Recipe',
-            'Limited Access to Ingredient Delivery Service',
-            '24/7 Online Support'
-        ],
-        price: '120.000',
-    },
-    {
-        title: 'Premium Pro',
-        benefit: [
-            'Premium Recipe',
-            'Full Access to Ingredient Delivery Service',
-            'Free Ingredient Pick',
-            '24/7 Online Support'
-        ],
-        price: '360.000',
-    }
-]
+import axios from "axios";
 
 const ThreePackages = (props) => {
+    const apiURL = useSelector(state => state.apiInfo);
+    const [packages, setPackages] = useState([]);
+    useEffect(() => {
+        axios.get(`${apiURL}/packages`)
+            .then((res) => {
+                const data = res.data.data;
+                setPackages(data);
+            })
+    }, [apiURL]);
     return (
         <div className={styles.packageWrapper}>
             {
-                packages.map(pkg => {
+                packages.map((pkg, i) => {
                     return (
                         <PackageCard
-                            title={pkg.title}
+                            key={i}
+                            title={pkg.type}
                             price={pkg.price}
-                            benefit={pkg.benefit}
+                            benefit={JSON.parse(pkg.benefits).benefits}
                         />
                     )
                 })
