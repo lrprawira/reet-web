@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { useSelector } from "react-redux";
 import { useParams, useHistory } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Header from "./Header/Header";
 import Big from "./Recipe/Big/Big";
 import SeparatorVertical from "./SeparatorVertical";
@@ -38,6 +39,9 @@ const Product = (props) => {
         {
             loading ? <Loading/> :
                 <div>
+                    <Helmet>
+                        <title>Reet - { recipe.name }</title>
+                    </Helmet>
                     <Header/>
                     <Big selectedProduct={recipe}/>
                     <SeparatorVertical height={18}/>
