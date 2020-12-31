@@ -27,7 +27,7 @@ const CatalogueSidebar = props => {
                 <CatalogueFilterList originName={'Philippines'} canonicalOriginName={'philippines'} originFilter={props.originFilter} filterOriginHandler={filterOriginHandler} />
                 <CatalogueFilterList originName={'Chinese'} canonicalOriginName={'chinese'} originFilter={props.originFilter} filterOriginHandler={filterOriginHandler} />
                 <CatalogueFilterList originName={'Japanese'} canonicalOriginName={'japanese'} originFilter={props.originFilter} filterOriginHandler={filterOriginHandler} />
-                <CatalogueFilterList originName={'Korean'} canonicalOriginName={'korea'} originFilter={props.originFilter} filterOriginHandler={filterOriginHandler} />
+                <CatalogueFilterList originName={'Korean'} canonicalOriginName={'korean'} originFilter={props.originFilter} filterOriginHandler={filterOriginHandler} />
                 <CatalogueFilterList originName={'Others'} canonicalOriginName={'others'} originFilter={props.originFilter} filterOriginHandler={filterOriginHandler} />
             </div>
         </div>
