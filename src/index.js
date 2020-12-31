@@ -6,12 +6,13 @@ import * as serviceWorker from './serviceWorker';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers/combiner';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const store = createStore(rootReducer);
 
 ReactDOM.render(
   <React.StrictMode>
+      <HelmetProvider>
       <Provider store={store}>
           <Helmet>
               <meta charSet={'utf-8'} />
@@ -19,6 +20,7 @@ ReactDOM.render(
           </Helmet>
         <App />
       </Provider>
+    </HelmetProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

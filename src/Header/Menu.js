@@ -8,7 +8,7 @@ const Menu = (props) => {
     return (
         <div className={styles.menuWrapper}>
             <Link to={'/'}>
-                <div>Recipes</div>
+                <div style={{ fontWeight: 'bold' }}>Recipes</div>
             </Link>
             <SeparatorEmpty width={32} />
             <Link to={'/packages'}>

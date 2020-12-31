@@ -8,4 +8,11 @@
   align-items: center;
 }
 
+.profileButtonUser {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 10px;
+}
+
 /*# sourceMappingURL=ProfileButton.module.css.map */

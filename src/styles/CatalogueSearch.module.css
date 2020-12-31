@@ -1,18 +1,28 @@
 .catalogueSearchWrapper {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 6rem;
+  margin-bottom: 5.4rem;
   max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.catalogueSearchInputWrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 18px;
+  padding: 18px;
+  background: #eee;
+  width: 50%;
+}
+
 .catalogueSearchInput {
   appearance: none;
-  border: 1px solid black;
-  border-radius: 24px;
-  padding: 7px 14px 7px 14px;
+  background: transparent;
+  border: none;
   outline: none;
+  font-size: 18px;
+  padding-left: 16px;
 }
 
 /*# sourceMappingURL=CatalogueSearch.module.css.map */
