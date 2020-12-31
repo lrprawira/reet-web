@@ -17,7 +17,6 @@ const isFiltered = (filter) => {
 
 const checkRecipeFilterCompatibility = (recipe, filter) => {
     for (let f in filter) {
-        console.log(`${filter[f]} ${recipe.origin} ${f}`);
         if (filter[f] && recipe.origin === f)
             return true;
     }

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from '../../styles/CatalogueSidebar.module.css';
 import SeparatorVertical from "../../SeparatorVertical";
+import CatalogueFilterList from "./CatalogueFilterList";
 
 const CatalogueSidebar = props => {
     const filterOriginHandler = (e, origin) => {
@@ -20,54 +21,14 @@ const CatalogueSidebar = props => {
             <SeparatorVertical height={36} />
             <div className={styles.filterType}>
                 <span>Origin</span>
-                <div className={styles.filterList}>
-                    <span className={styles.originName}>Indonesia</span>
-                    <span className={styles.originCheckbox}>
-                        <input type={'checkbox'} checked={props.originFilter.indonesia} onChange={(e) => filterOriginHandler(e, 'indonesia')}/>
-                    </span>
-                </div>
-                <div className={styles.filterList}>
-                    <span className={styles.originName}>Malaysia</span>
-                    <span className={styles.originCheckbox}>
-                        <input type={'checkbox'} checked={props.originFilter.malaysia} onChange={(e) => filterOriginHandler(e, 'malaysia')}/>
-                    </span>
-                </div>
-                <div className={styles.filterList}>
-                    <span className={styles.originName}>Thailand</span>
-                    <span className={styles.originCheckbox}>
-                        <input type={'checkbox'} checked={props.originFilter.thailand} onChange={(e) => filterOriginHandler(e, 'thailand')}/>
-                    </span>
-                </div>
-                <div className={styles.filterList}>
-                    <span className={styles.originName}>Philippines</span>
-                    <span className={styles.originCheckbox}>
-                        <input type={'checkbox'} checked={props.originFilter.philippines} onChange={(e) => filterOriginHandler(e, 'philippines')}/>
-                    </span>
-                </div>
-                <div className={styles.filterList}>
-                    <span className={styles.originName}>Chinese</span>
-                    <span className={styles.originCheckbox}>
-                        <input type={'checkbox'} checked={props.originFilter.chinese} onChange={(e) => filterOriginHandler(e, 'chinese')}/>
-                    </span>
-                </div>
-                <div className={styles.filterList}>
-                    <span className={styles.originName}>Japanese</span>
-                    <span className={styles.originCheckbox}>
-                        <input type={'checkbox'} checked={props.originFilter.japanese} onChange={(e) => filterOriginHandler(e, 'japanese')}/>
-                    </span>
-                </div>
-                <div className={styles.filterList}>
-                    <span className={styles.originName}>Korean</span>
-                    <span className={styles.originCheckbox}>
-                        <input type={'checkbox'} checked={props.originFilter.korean} onChange={(e) => filterOriginHandler(e, 'korean')}/>
-                    </span>
-                </div>
-                <div className={styles.filterList}>
-                    <span className={styles.originName}>Others</span>
-                    <span className={styles.originCheckbox}>
-                        <input type={'checkbox'} checked={props.originFilter.others} onChange={(e) => filterOriginHandler(e, 'others')}/>
-                    </span>
-                </div>
+                <CatalogueFilterList originName={'Indonesia'} canonicalOriginName={'indonesia'} originFilter={props.originFilter} filterOriginHandler={filterOriginHandler} />
+                <CatalogueFilterList originName={'Malaysia'}  canonicalOriginName={'malaysia'} originFilter={props.originFilter} filterOriginHandler={filterOriginHandler} />
+                <CatalogueFilterList originName={'Thailand'}  canonicalOriginName={'thailand'} originFilter={props.originFilter} filterOriginHandler={filterOriginHandler} />
+                <CatalogueFilterList originName={'Philippines'} canonicalOriginName={'philippines'} originFilter={props.originFilter} filterOriginHandler={filterOriginHandler} />
+                <CatalogueFilterList originName={'Chinese'} canonicalOriginName={'chinese'} originFilter={props.originFilter} filterOriginHandler={filterOriginHandler} />
+                <CatalogueFilterList originName={'Japanese'} canonicalOriginName={'japanese'} originFilter={props.originFilter} filterOriginHandler={filterOriginHandler} />
+                <CatalogueFilterList originName={'Korea'} canonicalOriginName={'korea'} originFilter={props.originFilter} filterOriginHandler={filterOriginHandler} />
+                <CatalogueFilterList originName={'Others'} canonicalOriginName={'others'} originFilter={props.originFilter} filterOriginHandler={filterOriginHandler} />
             </div>
         </div>
     );

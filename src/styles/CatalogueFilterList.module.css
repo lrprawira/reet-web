@@ -1,0 +1,15 @@
+.filterList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.filterList .originName {
+  font-size: 1.1rem;
+}
+.filterList input.originCheckbox {
+  height: 1em;
+  width: 1em;
+}
+
+/*# sourceMappingURL=CatalogueFilterList.module.css.map */
