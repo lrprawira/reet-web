@@ -12,7 +12,7 @@ const CarouselText = (props) => {
                 Reet Saving Plan includes Reet Premium Food Package for 2 weeks only for very limited time!*
             </div>
             <div className={styles.carouselTextMisc}>
-                *ToC applies
+                *T&C applies
             </div>
             <div className={styles.carouselTextCheck} onPointerOver={() => setPointerHover(true)} onPointerLeave={() => setPointerHover(false)}>
                 Check out now <span style={pointerHover ? {marginLeft: 4, transition: 1} : {}}>→</span>
