@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import {useSelector} from "react-redux";
 import axios from 'axios';
 import styles from '../../styles/CatalogueContent.module.css';
@@ -30,21 +30,20 @@ const CatalogueContent = props => {
     const apiURL = useSelector(state => state.apiInfo);
     const gridCatalogue = useRef(null);
 
-    const resizeEvent = () => {
+    const resizeEvent = useCallback(() => {
         if (gridCatalogue.current) {
             calculateGridElementHeight(gridCatalogue.current.clientWidth);
         }
-    };
+    }, []);
     const calculateGridElementHeight = (width) => {
-        setGridElementHeight(width / 3 / 1.5);
-        console.log(gridElementHeight);
+        setGridElementHeight(width / 3 / 1.2);
     };
     useEffect(() => {
         window.addEventListener('resize', resizeEvent);
         return () => {
-            window.removeEventListener('resize');
+            window.removeEventListener('resize', resizeEvent);
         }
-    }, []);
+    }, [resizeEvent]);
 
     useEffect(() => {
         if (loading) {

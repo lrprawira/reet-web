@@ -6,14 +6,18 @@ import axios from "axios";
 
 const ThreePackages = (props) => {
     const apiURL = useSelector(state => state.apiInfo);
+    const [loading, setLoading] = useState(true);
     const [packages, setPackages] = useState([]);
     useEffect(() => {
-        axios.get(`${apiURL}/packages`)
-            .then((res) => {
-                const data = res.data.data;
-                setPackages(data);
-            })
-    }, [apiURL]);
+        if (loading) {
+            axios.get(`${apiURL}/packages`)
+                .then((res) => {
+                    const data = res.data.data;
+                    setPackages(data);
+                })
+            setLoading(false);
+        }
+    }, [apiURL, loading]);
     return (
         <div className={styles.packageWrapper}>
             {
