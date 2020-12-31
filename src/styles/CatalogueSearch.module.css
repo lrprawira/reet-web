@@ -17,6 +17,7 @@
 }
 
 .catalogueSearchInput {
+  width: 100%;
   appearance: none;
   background: transparent;
   border: none;
