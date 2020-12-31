@@ -6,7 +6,9 @@ import SeparatorHorizontal from "../../SeparatorHorizontal";
 
 const CatalogueContentCard = props => {
     return (
-        <Link to={`/recipe/${props.id}`} className={styles.catalogueContentCardWrapper} style={{cursor: "pointer"}} >
+        <Link to={`/recipe/${props.id}`} className={styles.catalogueContentCardWrapper} style={{
+            height: props.height
+        }}>
             <div className={styles.catalogueContentCardImgWrapper}>
                 <img src={props.image} alt={`${props.name}`} />
             </div>

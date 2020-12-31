@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {useSelector} from "react-redux";
 import axios from 'axios';
 import styles from '../../styles/CatalogueContent.module.css';
@@ -26,7 +26,26 @@ const checkRecipeFilterCompatibility = (recipe, filter) => {
 const CatalogueContent = props => {
     const [loading, setLoading] = useState(true);
     const [recipes, setRecipes] = useState([]);
+    const [gridElementHeight, setGridElementHeight] = useState(0);
     const apiURL = useSelector(state => state.apiInfo);
+    const gridCatalogue = useRef(null);
+
+    const resizeEvent = () => {
+        if (gridCatalogue.current) {
+            calculateGridElementHeight(gridCatalogue.current.clientWidth);
+        }
+    };
+    const calculateGridElementHeight = (width) => {
+        setGridElementHeight(width / 3 / 1.5);
+        console.log(gridElementHeight);
+    };
+    useEffect(() => {
+        window.addEventListener('resize', resizeEvent);
+        return () => {
+            window.removeEventListener('resize');
+        }
+    }, []);
+
     useEffect(() => {
         if (loading) {
             axios.get(`${apiURL}/products`)
@@ -47,6 +66,8 @@ const CatalogueContent = props => {
             author={recipe.author}
             image={recipe.image}
             rating={recipe.rating}
+            update={resizeEvent}
+            height={gridElementHeight}
         />);
     };
 
@@ -77,7 +98,10 @@ const CatalogueContent = props => {
         <>
             {
                 loading ? <Loading /> : (
-                    <div className={styles.catalogueContentWrapper}>
+                    <div className={styles.catalogueContentWrapper}
+                         ref={gridCatalogue}
+                         onLoad={resizeEvent}
+                         id={'gridCatalogue'}>
                         {recipes.map(recipe => {
                             return determineShowCard(recipe);
                         })}
