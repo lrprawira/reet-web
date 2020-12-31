@@ -22,7 +22,7 @@ const CatalogueContentCard = props => {
                 <div className={styles.catalogueContentCardRating}>
                     <RiStarFill size={12} color={'#444'} />
                     <SeparatorHorizontal width={6} />
-                    {props.rating}/5.0
+                    {props.rating.toPrecision(2)}/5.0
                 </div>
             </div>
 

@@ -4,7 +4,7 @@ import styles from "../../styles/RecipeImage.module.css";
 const Big = props => {
     return (
         <div className={styles.dividedBig}>
-            <div className={styles.imageBig}>
+            <div className={styles.imageBig} ref={props.bigImageRef} onLoad={props.resizeEvent}>
                 <img src={props.selectedProduct.image} alt={`${props.selectedProduct.name}`}/>
             </div>
             <div className={styles.infoBig}>

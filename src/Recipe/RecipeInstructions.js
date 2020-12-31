@@ -6,9 +6,11 @@ const RecipeInstructions = props => {
         <div className={styles.instructionWrapper}>
             <div className={styles.instructionTitle}>Instructions</div>
             {
-                props.instructions.split('\n').map((line, i) => <div className={styles.instructionContent} key={i}>
+                props.instructions.split('\n').map((line, i) =>
+                    <div className={styles.instructionContent} key={i}>
                     { line }
-                </div>)
+                    </div>
+                )
             }
 
         </div>
