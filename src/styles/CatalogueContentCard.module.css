@@ -1,7 +1,7 @@
 .catalogueContentCardWrapper {
   display: flex;
   flex-direction: column;
-  height: calc( 100% / 1.5 );
+  height: 400px;
   min-width: 40px;
   width: auto;
 }

@@ -83,7 +83,6 @@ const CatalogueContent = props => {
                         })}
                     </div>)
             }
-            <div></div>
         </>
     );
 };
