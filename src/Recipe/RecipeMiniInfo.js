@@ -12,7 +12,7 @@ const RecipeMiniInfo = props => {
             <SeparatorHorizontal width={32}/>
             <RiStarFill size={12} color={'#444'}/>
             <SeparatorHorizontal width={6}/>
-            {props.rating}/5.0
+            {props.rating.toPrecision(2)}/5.0
         </div>
     );
 };
