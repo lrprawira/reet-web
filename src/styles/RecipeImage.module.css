@@ -3,7 +3,8 @@
 }
 
 .imageBig {
-  height: 500px;
+  height: 0;
+  padding-bottom: calc(100% / 3);
   overflow: hidden;
   border-radius: 36px;
   flex: 4;

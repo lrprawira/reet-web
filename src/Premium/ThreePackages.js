@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import PackageCard from "./PackageCard";
 import styles from '../styles/ThreePackages.module.css';
 import axios from "axios";
+import Loading from "../Loading";
 
 const ThreePackages = (props) => {
     const apiURL = useSelector(state => state.apiInfo);
@@ -14,25 +15,30 @@ const ThreePackages = (props) => {
                 .then((res) => {
                     const data = res.data.data;
                     setPackages(data);
+                    setLoading(false);
                 })
-            setLoading(false);
         }
     }, [apiURL, loading]);
     return (
-        <div className={styles.packageWrapper}>
+        <>
             {
-                packages.map((pkg, i) => {
-                    return (
-                        <PackageCard
-                            key={i}
-                            title={pkg.type}
-                            price={pkg.price}
-                            benefit={JSON.parse(pkg.benefits).benefits}
-                        />
-                    )
-                })
+                loading ? <Loading /> :
+                <div className={styles.packageWrapper}>
+                    {
+                        packages.map((pkg, i) => {
+                            return (
+                                <PackageCard
+                                    key={i}
+                                    title={pkg.type}
+                                    price={pkg.price}
+                                    benefit={JSON.parse(pkg.benefits).benefits}
+                                />
+                            )
+                        })
+                    }
+                </div>
             }
-        </div>
+        </>
     );
 };
 
